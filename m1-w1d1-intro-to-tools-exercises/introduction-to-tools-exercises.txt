@@ -336,7 +336,7 @@ Techs-MacBook-Air:docs cniederkofler$ >
 
 ----
 19. Create a new file name "readme.txt" using Visual Studio Code, and add the text
-    "Hello, this is the beginning of the application's documentation."
+    "Hello, this is the beginning of the appltion's documentation."
 ----
 
 $ code readme.txt
@@ -349,10 +349,10 @@ Don't forget to save the file in Visual Studio Code!
     work so it can be reviewed by an instructor.
 ----
 
-$ <enter the Git command to display status>
+$ <git status>
 
-$ <enter the Git command to "stage" all changes>
+$ <git add -A>
 
-$ <enter the Git command to save all "staged" changes>
+$ git commit -m "Here is homework from day 1.">
 
-$ <enter the Git command to save local repository to BitBucket>
+$ <git push origin mastert>
