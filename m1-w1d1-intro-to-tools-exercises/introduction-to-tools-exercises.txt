@@ -17,7 +17,6 @@ clutter found in real projects.
 1.  To begin, open your terminal, and enter the following command to change 
     directory to the exercise folder.
 ----
-
 $ cd ~/workspace/exercises/m1-w1d1-intro-to-tools-exercises/java-helloworld
 
 Note, do not enter the beginning "$" character. It represents the prompt for 
@@ -28,7 +27,7 @@ actual command from other text in Unix documentation.
 ----
 2.  What does the ~ (tilde) character in the above command to change directory 
     refer to?
-----
+----  Takes you to the home directories. 
 
 
 ----
@@ -38,8 +37,7 @@ actual command from other text in Unix documentation.
 ----
 
 $ pwd
-<type or copy-paste the result here>
-
+</Users/cniederkofler>
 The present working directory displayed should match the directory you changed 
 to in Exercise 1.  Note, the two may not match at the very beginning if you
 used the tilde when changing directories.  The tilde is a conveniece to save 
@@ -54,7 +52,12 @@ changes directory, and the "pwd" command reflects this.
 ----
 
 $ ls -la
-<type or copy-paste the result here>
+<total 40
+drwxr-xr-x  5 cniederkofler  staff   170 Jan 16 08:56 .
+drwxr-xr-x  5 cniederkofler  staff   170 Jan 16 08:56 ..
+-rw-r--r--@ 1 cniederkofler  staff  6148 Jan 16 09:26 .DS_Store
+-rw-r--r--  1 cniederkofler  staff  8458 Jan 16 10:55 introduction-to-tools-exercises.txt
+drwxr-xr-x  6 cniederkofler  staff   204 Jan 16 08:56 java-helloworld>
 
 
 ----
@@ -62,14 +65,18 @@ $ ls -la
     Exercise 4 represent?
 ----
 
-<type or copy-paste your answer here>
+<the '.' refers to the current directory, while the '..', refers to the parent directory>
 
 ----
 6.  What are the names of the files, including any dot-files, displayed in the
     directory listing in Exercise 4?
 ----
 
-<type or copy-paste your answer here>
+<drwxr-xr-x  5 cniederkofler  staff   170 Jan 16 08:56 .
+drwxr-xr-x  5 cniederkofler  staff   170 Jan 16 08:56 ..
+-rw-r--r--@ 1 cniederkofler  staff  6148 Jan 16 09:26 .DS_Store
+-rw-r--r--  1 cniederkofler  staff  8458 Jan 16 10:55 introduction-to-tools-exercises.txt
+drwxr-xr-x  6 cniederkofler  staff   204 Jan 16 08:56 java-helloworld>
 
 
 ----
@@ -77,7 +84,7 @@ $ ls -la
     the directory listing in Exercise 4?
 ----
 
-<type or copy-paste your answer here>
+<introduction-to-tools-exercises.txt	java-helloworld>
 
 
 ----
@@ -123,13 +130,13 @@ You are encouraged to make "less" part of your standard command line toolkit.
 Did you remember to save "m1-introduction-to-tools-exercise.txt"?
 
 $ git status
-<type or copy-paste the result here>
+<modified:   introduction-to-tools-exercises.txt>
 
 $ git add .
-<type or copy-paste the result here>
+<I just got a line telling me which directory I am currenly in. >
 
 $ git commit -m "Good stopping point"
-<type or copy-paste the result here>
+<I got an error message saying that m requires a value. >
 
 Note, you do not need to push this commit up to BitBucket. The typical Git 
 workflow is to many small commits to your local repo, with pushes up to 
@@ -143,7 +150,7 @@ BitBucket when a feature, fix, or in this case, assignment is finished.
 
 $ cd src/main/java/com/techelevator
 $ <enter command to display present working directory>
-<type or copy-paste your present working directory here>
+</Users/cniederkofler/Development/workspace/christopherniederkofler-java-exercises/m1-w1d1-intro-to-tools-exercises/java-helloworld/src/main/java/com/techelevator>
 
 
 ----
@@ -151,7 +158,7 @@ $ <enter command to display present working directory>
     path?
 ----
 
-<type your answer here>
+<Absolute path, because it is taking you to a direct singular location.>
 
 
 ----
@@ -160,7 +167,9 @@ $ <enter command to display present working directory>
 ----
 
 $ <enter command to list all files and folders including dot-files and dot-folders>
-<type or copy-paste the result here>
+<drwxr-xr-x  3 cniederkofler  staff  102 Jan 15 15:29 .
+drwxr-xr-x  4 cniederkofler  staff  136 Jan 16 09:07 ..
+-rw-r--r--  1 cniederkofler  staff  141 Jan 15 15:29 Helloworld.java>
 
 
 ----
@@ -168,14 +177,21 @@ $ <enter command to list all files and folders including dot-files and dot-folde
     Make a backup of the file named "Helloworld.java.backup" using the copy 
     command.
 ----
-
 $ cp Helloworld.java Helloworld.java.backup
 
 The "cp" parameters are the name of the source file followed by the name of the 
 destination file. 
 
-$ <enter command to list all files and folders in order to confirm the creation of the backup file>
-<type or copy-paste the result here>
+$ <drwxr-xr-x  3 cniederkofler  staff  102 Jan 15 15:29 .
+drwxr-xr-x  4 cniederkofler  staff  136 Jan 16 09:07 ..
+-rw-r--r--  1 cniederkofler  staff  141 Jan 15 15:29 Helloworld.java
+Techs-MacBook-Air:techelevator cniederkofler$ cp Helloworld.java Helloworld.java.backup
+Techs-MacBook-Air:techelevator cniederkofler$ ls -la
+total 16
+drwxr-xr-x  4 cniederkofler  staff  136 Jan 16 16:22 .
+drwxr-xr-x  4 cniederkofler  staff  136 Jan 16 09:07 ..
+-rw-r--r--  1 cniederkofler  staff  141 Jan 15 15:29 Helloworld.java
+-rw-r--r--  1 cniederkofler  staff  141 Jan 16 16:22 Helloworld.java.backup>
 
 
 ----    
@@ -189,7 +205,11 @@ The "mv" parameters are the existing name of the file followed by the new name
 of the file. 
 
 $ <enter command to list all files and folders in order to confirm the renaming of the file>
-<type or copy-paste the result here>
+<total 16
+drwxr-xr-x  4 cniederkofler  staff  136 Jan 16 16:23 .
+drwxr-xr-x  4 cniederkofler  staff  136 Jan 16 09:07 ..
+-rw-r--r--  1 cniederkofler  staff  141 Jan 15 15:29 Helloworld.java
+-rw-r--r--  1 cniederkofler  staff  141 Jan 16 16:22 Helloworld.java.copy>
 
 
 ----
@@ -198,16 +218,70 @@ $ <enter command to list all files and folders in order to confirm the renaming 
 ----
 
 $ <enter the Git command to display status>
-<type or copy-paste the result here>
+<On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   ../../../../../../.DS_Store
+	modified:   ../../../../../../introduction-to-tools-exercises.txt
+	new file:   ../../../../../.DS_Store
+	new file:   ../../../../.DS_Store
+	new file:   ../../../.DS_Store
+	new file:   ../../.DS_Store
+	new file:   ../.DS_Store
+
+>
 
 $ <enter the Git command to "stage" all changes>
-<type or copy-paste the result here>
+<	new file:   ../../../../../../../.DS_Store
+	new file:   ../../../../../../.DS_Store
+	modified:   ../../../../../../introduction-to-tools-exercises.txt
+	new file:   ../../../../../.DS_Store
+	new file:   ../../../../.DS_Store
+	new file:   ../../../.DS_Store
+	new file:   ../../.DS_Store
+	new file:   ../.DS_Store
+	new file:   Helloworld.java.copy
+	new file:   ../../../../../../../m1-w1d2-variables-and-datatypes-exercises/.classpath
+	new file:   ../../../../../../../m1-w1d2-variables-and-datatypes-exercises/.gitignore
+	new file:   ../../../../../../../m1-w1d2-variables-and-datatypes-exercises/.project
+	new file:   ../../../../../../../m1-w1d2-variables-and-datatypes-exercises/.settings/org.eclipse.jdt.core.prefs
+	new file:   ../../../../../../../m1-w1d2-variables-and-datatypes-exercises/.settings/org.eclipse.m2e.core.prefs
+>
 
 $ <enter the Git command to save all "staged" changes>
-<type or copy-paste the result here>
+<Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch master
+# Changes to be committed:
+#       new file:   ../../../../../../../.DS_Store
+#       new file:   ../../../../../../.DS_Store
+#       modified:   ../../../../../../introduction-to-tools-exercises.txt
+#       new file:   ../../../../../.DS_Store
+#       new file:   ../../../../.DS_Store
+#       new file:   ../../../.DS_Store
+#       new file:   ../../.DS_Store
+#       new file:   ../.DS_Store
+#       new file:   Helloworld.java.copy
+#       new file:   ../../../../../../../m1-w1d2-variables-and-datatypes-exercises/.classpath
+#       new file:   ../../../../../../../m1-w1d2-variables-and-datatypes-exercises/.gitignore
+#       new file:   ../../../../../../../m1-w1d2-variables-and-datatypes-exercises/.project
+#       new file:   ../../../../../../../m1-w1d2-variables-and-datatypes-exercises/.settings/org.eclipse.jdt.core.prefs
+#       new file:   ../../../../../../../m1-w1d2-variables-and-datatypes-exercises/.settings/org.eclipse.m2e.core.prefs
+#
+# Changes not staged for commit:
+#       modified:   ../../../../../../introduction-to-tools-exercises.txt>
 
 $ git push
-<type or copy-paste the result here>
+<Techs-MacBook-Air:techelevator cniederkofler$ git push origin master
+Counting objects: 37, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (23/23), done.
+Writing objects: 100% (37/37), 698.90 KiB | 3.25 MiB/s, done.
+Total 37 (delta 2), reused 0 (delta 0)
+To https://bitbucket.org/te-cbus-cohort-4/christopherniederkofler-java-exercises
+ * [new branch]      master -> master>
 
 
 ----
@@ -219,7 +293,9 @@ $ rm Helloworld.java.copy
 The "rm" parameter is the name of the file to be deleted.
 
 $ <enter command to list all files and folders in order to confirm the file deletion>
-<type or copy-paste the result here>
+<drwxr-xr-x  3 cniederkofler  staff  102 Jan 17 08:27 .
+drwxr-xr-x  4 cniederkofler  staff  136 Jan 16 09:07 ..
+-rw-r--r--  1 cniederkofler  staff  141 Jan 15 15:29 Helloworld.java>
 
 
 ----
@@ -241,7 +317,9 @@ command line when that seems natural.
 Regardless of the option you chose, check your new location.
 
 $ <enter command to display present working directory>
-<type or copy-paste your present working directory here>
+<Techs-MacBook-Air:techelevator cniederkofler$ pwd
+/Users/cniederkofler/Development/workspace/christopherniederkofler-java-exercises/m1-w1d1-intro-to-tools-exercises/java-helloworld/src/main/java/com/techelevator
+Techs-MacBook-Air:techelevator cniederkofler$ >
 
 
 ----
@@ -252,7 +330,9 @@ $ <enter command to display present working directory>
 $ mkdir docs
 $ <enter the command to change directory to "docs" using a relative path>
 $ <enter command to display present working directory>
-<type or copy-paste your present working directory here>
+<Techs-MacBook-Air:techelevator cniederkofler$ mkdir docs
+Techs-MacBook-Air:techelevator cniederkofler$ cd docs
+Techs-MacBook-Air:docs cniederkofler$ >
 
 ----
 19. Create a new file name "readme.txt" using Visual Studio Code, and add the text
