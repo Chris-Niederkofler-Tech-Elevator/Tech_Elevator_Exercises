@@ -37,7 +37,7 @@ public class Television {
     }
 
     /**
-     * Tuns the tv off. 
+     * Turns the tv off. 
      */
     public void TurnOff()
     {

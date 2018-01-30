@@ -21,25 +21,25 @@ public class HomeworkAssignment {
 		return possibleMarks;
 	}
 	public String getLetterGrade() {
-		return letterGrade;
-	}
-	
-	public  HomeworkAssignment(int possibleMarks) {
+		double score = ((double)totalMarks / (double)possibleMarks * 100);
+		if (score >= 90) 
+			   return "A";
+		       else if (score >= 80)  
+		     return "B";
+		   else if (score >= 70) 
+		     return "C";
+		   else if (score >= 60) 
+		      return "D";
+		      return "F";
 		 
-		
-		   if (totalMarks >= 90)
-		      System.out.println("A");
-		   else if (totalMarks >= 80) 
-		      System.out.println("B");
-		   else if (totalMarks >= 70) 
-		     System.out.println("C");
-		   else if (totalMarks >= 60)
-		      System.out.println("D");
-		   else 
-		     System.out.println("F");
+	
+	}
+	public  HomeworkAssignment(int possibleMarks) {
+		this.possibleMarks = possibleMarks;
 		  
 	}
 }
+
 		 
 		 
 //			 if((totalMarks / possibleMarks) >= 90) {

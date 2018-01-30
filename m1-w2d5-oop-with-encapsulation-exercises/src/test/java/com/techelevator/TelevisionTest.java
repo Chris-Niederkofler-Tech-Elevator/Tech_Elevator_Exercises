@@ -22,7 +22,7 @@ public class TelevisionTest {
         assertTrue("isOn() method needs to return type: boolean", method.getReturnType() == Boolean.TYPE);
         
         method = SafeReflection.getMethod(klass, "setOn", Boolean.TYPE);
-        assertTrue("Television class should not have a setOn(boolean) method", method == null);
+        assertTrue("Television class should not have a setOn(boolean) method", method == null); 
 
         method = SafeReflection.getMethod(klass, "getCurrentChannel");
         assertTrue("Television class needs the getCurrentChannel() method.",  method != null);
