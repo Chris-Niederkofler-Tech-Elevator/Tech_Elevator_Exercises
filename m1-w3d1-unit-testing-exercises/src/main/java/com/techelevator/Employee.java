@@ -10,7 +10,7 @@ public class Employee {
 
     /**
      * Creates a new employee 
-     * @param employeeId
+     * @param employeeId 
      * @param firstName
      * @param lastName
      * @param salary
@@ -22,12 +22,12 @@ public class Employee {
     }
 
     /**
-     * Employee Id
+     * Employee Id 
      * @return employeeId
      */
     public int getEmployeeId() {
         return employeeId;
-    }
+    } 
 
     /**
      * Employee first name
@@ -73,7 +73,7 @@ public class Employee {
      * Annual Employee Salary 
      * @return
      */
-    public double getAnnualSalary() {
+    public double getAnnualSalary() { 
         return annualSalary;        
     }
 

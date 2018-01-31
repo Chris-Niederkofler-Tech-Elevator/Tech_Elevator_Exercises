@@ -13,14 +13,17 @@ public class FruitTree {
     public FruitTree(String typeOfFruit, int startingPiecesOfFruit) {
         this.piecesOfFruitLeft = startingPiecesOfFruit;
         this.typeOfFruit = typeOfFruit;
-    }
+    }  
+ 
+   
+	
 
-    /**
-     * Type of fruit on the tree 
+	/**
+     * Type of fruit on the tree  
      * @return typeOfFruit
-     */
+     */ 
     public String getTypeOfFruit() {
-        return typeOfFruit;
+    		return typeOfFruit;
     }
 
     /**
@@ -28,8 +31,8 @@ public class FruitTree {
      * @return piecesOfFruitLeft
      */
     public int getPiecesOfFruitLeft() {
-        return piecesOfFruitLeft;
-    }
+        return piecesOfFruitLeft; 
+    } 
 
     /**
      * Picks fruit off of the tree and reduces the number of remaining pieces. 
@@ -37,9 +40,11 @@ public class FruitTree {
      * @return True if there is enough fruit to pick, false if not.
      */
     public boolean PickFruit(int numberOfPieces)
-    {
+    { if(numberOfPieces > 0) {
         piecesOfFruitLeft -= numberOfPieces;
-        return true;
-    }
-
+        return true;}
+     
+    return false;   
+     
 }
+} 
