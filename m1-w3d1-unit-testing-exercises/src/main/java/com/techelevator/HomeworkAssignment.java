@@ -18,7 +18,7 @@ public class HomeworkAssignment {
      * Total number of marks received 
      * @return
      */
-    public int getTotalMarks() {
+    public int getTotalMarks() { 
         return totalMarks;    
     }
 
@@ -61,24 +61,18 @@ public class HomeworkAssignment {
      * @return
      */
     public String getLetterGrade() {
-        double percentage = (double)totalMarks / possibleMarks;
-
-        if (percentage >= 0.6) {
-            return "D";
-        }
-        if (percentage >= 0.7) {
-            return "C";
-        }
-        if (percentage >= 0.8) {
-            return "B";
-        }
-        if (percentage >= 0.9) {
-            return "A";
-        }                                                
-        else {
-            return "F";
-        }
+    	double score = ((double)totalMarks / (double)possibleMarks * 100);
+		if (score >= 90) 
+			   return "A";
+		       else if (score >= 80)  
+		     return "B";
+		   else if (score >= 70) 
+		     return "C";
+		   else if (score >= 60) 
+		      return "D";
+		      return "F";
+        } 
         
-    }
+    } 
 
-}
+ 

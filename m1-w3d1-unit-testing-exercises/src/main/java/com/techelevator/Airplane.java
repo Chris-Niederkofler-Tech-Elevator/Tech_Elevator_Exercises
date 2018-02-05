@@ -5,7 +5,7 @@ public class Airplane {
 	private String planeNumber;
     private int totalFirstClassSeats;
     private int bookedFirstClassSeats = 0;
-    private int totalCoachSeats;
+    private int totalCoachSeats; 
     private int bookedCoachSeats = 0;
 
     /**
@@ -81,15 +81,22 @@ public class Airplane {
      * @return True if reservation was successful, false otherwise
      */
     public boolean Reserve(boolean firstClass, int totalNumberOfSeats) {       
-    	if(firstClass == true && totalNumberOfSeats <= getAvailableFirstClassSeats()){
+    	if(firstClass){
 			bookedFirstClassSeats += totalNumberOfSeats;
-			return true;
-			} 
-		if(firstClass == false && totalNumberOfSeats <= getAvailableCoachSeats()) {
-			bookedCoachSeats += totalNumberOfSeats;
-			return true;
+			this.totalFirstClassSeats -= totalNumberOfSeats;
+			if(totalNumberOfSeats > getAvailableFirstClassSeats()) {
+				return false;
 			}
-	 return false;
-    }
-
-}
+			 
+			} 
+    	else {
+		bookedCoachSeats += totalNumberOfSeats;
+		this.bookedCoachSeats -= totalNumberOfSeats;
+		if(totalNumberOfSeats > getAvailableCoachSeats()) {
+			return false;
+		}
+			}  
+	 return true; 
+    }  
+ 
+} 

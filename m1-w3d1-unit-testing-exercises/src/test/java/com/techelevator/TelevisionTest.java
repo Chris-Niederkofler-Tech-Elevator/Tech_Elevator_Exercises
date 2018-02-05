@@ -66,21 +66,22 @@ public class TelevisionTest {
 		Assert.assertEquals("Try and Raise Volume to 11", 3 , tv.getCurrentVolume());
 	}
 	@Test
-	public void does_volume_reset_when_turning_tv_on() {
+	public void check_raise_volume() {
 		//Arrange
 		tv.TurnOn();
 		//Act
-		tv.getCurrentVolume();
+		tv.RaiseVolume(); 
 		//Arrange
-		Assert.assertEquals("Turn on Tv and check current volume", 2 , tv.getCurrentVolume());
+		Assert.assertEquals("Does volume get raised", 3, tv.getCurrentVolume());
 	} 
 	@Test
 	public void what_is_the_lower_boundary_of_volume() {
 		//Arrange
 		tv.TurnOn();
-		//Act 
+		//Act    
 		tv.LowerVolume();
 		//Assert
 		Assert.assertEquals("Try and Lower Volume below zero", 1, tv.getCurrentVolume());
 		} 
+	
 }  

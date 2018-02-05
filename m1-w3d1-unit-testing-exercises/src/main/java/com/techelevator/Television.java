@@ -54,7 +54,7 @@ public class Television {
         {
             selectedChannel = newChannel;
         } 
-    }
+    } 
 
     /**
      * Raises the volume. It won't raise it past 10 and the tv has to be on 
@@ -70,10 +70,10 @@ public class Television {
      */
     public void LowerVolume()
     {
-    	if(isOn && currentVolume >= 1) {
+    	if(isOn && currentVolume >= 1 && currentVolume != 0) {
     		currentVolume-= 1;
     }
     
-    } 
-} 
+    }  
+}    
 

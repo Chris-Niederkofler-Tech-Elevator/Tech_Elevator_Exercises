@@ -6,7 +6,7 @@ public class SmartPhone {
     private String carrier;
     private String operatingSystem;
     private boolean onCall;
-    private int batteryCharge = 100;
+    private int batteryCharge = 50; 
 
     /**
      * Creates a new smart phone 
@@ -26,7 +26,7 @@ public class SmartPhone {
     public String getPhoneNumber() {
         return phoneNumber;            
     }
-
+ 
     /**
      * Phone carrier
      * @return carrier
@@ -79,7 +79,7 @@ public class SmartPhone {
         batteryCharge -= numberOfMinutesToTalk;
 
         return true;
-    }
+    } 
 
     /**
      * Answer the phone. OnCall will be set to true. Battery juice is free when you answer the phone 
@@ -94,15 +94,15 @@ public class SmartPhone {
      */
     public void HangUp()
     {
-        onCall = !onCall;
-    }
+        onCall = !onCall;  
+    } 
 
     /**
      * Recharges the battery from wherever it is at back to 100 
      */
     public void RechargeBattery()
     {
-        batteryCharge = 95;
+        batteryCharge = 100;
     }
 
 }

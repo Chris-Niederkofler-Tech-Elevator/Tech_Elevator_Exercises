@@ -8,26 +8,30 @@ import org.junit.Test;
 
 public class Employee_Test {
 	
-	private Employee eS;
+	private Employee salary;
 	
 	@Before
 	public void Employee() {
-		eS = new Employee(0, null, null, 0);
-	}
-
-	@Test
-	public void AnnualSalary() {
-		//Arrange
-		eS.RaiseSalary(1);
-		//Assert
-		Assert.assertEquals(0, 0);
-	}
-	}
-		
+		salary = new Employee(1234	,"Chris","Needles", 20000);
 	
+	}
+	
+	
+	@Test
+	public void is_annual_salary_correct_after_raise() {
+		salary.getAnnualSalary();
+		salary.RaiseSalary(10);
+		
+		Assert.assertEquals("Raise salary by 10 percent", 22000, salary.getAnnualSalary(), 0);
+		
+	}
+}  
+	 
+		   
+	 
+   
 
 
 
-
- 
+   
 

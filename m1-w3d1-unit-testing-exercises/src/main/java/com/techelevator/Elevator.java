@@ -2,14 +2,14 @@ package com.techelevator;
 
 public class Elevator {
 
-	private int shaftNumber;
-    private int currentLevel;
-    private int numberOfLevels;
+	private int shaftNumber =1;
+    private int currentLevel = 1;
+    private int numberOfLevels = 10;
     private boolean doorOpen = true;
     private boolean moving;
-
+ 
     /**
-     * Creates a new elevator 
+     * Creates a new elevator  
      * @param shaftNumber Shaft for the elevator
      * @param totalNumberOfFloors Number of floors in the elevator
      */
@@ -23,10 +23,10 @@ public class Elevator {
      * Elevator Shaft Number 
      * @return shaftNumber
      */
-    public int getShaftNumber() {
+    public int getShaftNumber() { 
         return shaftNumber;
     }
-
+ 
     /**
      * Current elevator level 
      * @return currentLevel
@@ -78,26 +78,29 @@ public class Elevator {
         if (!moving)
         {
             doorOpen = !doorOpen;
-        }
-    }
-
+        } 
+    } 
     /**
      * Moves the elevator up, as long as the door is closed and the desired floor is not past the last floor 
      * @param desiredFloor Desired floor to go to
      * @return If the elevator was able to move up
      */
-    public boolean GoUp(int desiredFloor)
-    {
-        currentLevel = desiredFloor;
+   // public boolean GoUp(int desiredFloor)
+   // {
+    	public void goUp(int desiredFloor) {
+    		if(!doorOpen && desiredFloor <= numberOfLevels && desiredFloor > currentLevel) {
+    			currentLevel = desiredFloor;
+    		} 
+//        currentLevel = desiredFloor; 
 
-        if (desiredFloor > currentLevel && desiredFloor <= numberOfLevels && doorOpen)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+//        if (desiredFloor > currentLevel && desiredFloor <= numberOfLevels && doorOpen)
+//        {
+//            return true;
+//        }   
+//        else  
+//        {   
+//            return false; 
+//        } 
     }
 
     /**
@@ -105,15 +108,22 @@ public class Elevator {
      * @param desiredFloor Floor to go to
      * @return True if possible to move
      */
-    public boolean GoDown(int desiredFloor)
-    {
-        if (!doorOpen && desiredFloor < currentLevel && desiredFloor > 0)
-        {
-            currentLevel -= desiredFloor;
-            return true;
-        }
+    	
+    	public void goDown(int desiredFloor) {
+    		if(!doorOpen && desiredFloor >= 1 && desiredFloor < currentLevel) {
+    			currentLevel = desiredFloor;
+    		}
+    	}
+} 
+    		 
+//    public boolean GoDown(int desiredFloor)
+//    {
+//        if (!doorOpen && desiredFloor < currentLevel && desiredFloor > 0)
+//        {
+//            currentLevel -= desiredFloor;
+//            return true;
+//        } 
+//
+//        return false; 
 
-        return false;
-    }
 
-}

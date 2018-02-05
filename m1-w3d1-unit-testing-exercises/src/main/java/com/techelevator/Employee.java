@@ -19,7 +19,7 @@ public class Employee {
         this.firstName = firstName;
         this.lastName = lastName;
         this.annualSalary = salary;
-    }
+    } 
 
     /**
      * Employee Id 
@@ -85,5 +85,5 @@ public class Employee {
         double raiseAmount = annualSalary * percentage/100;
         annualSalary += raiseAmount;
     }
-
-}
+  
+} 
