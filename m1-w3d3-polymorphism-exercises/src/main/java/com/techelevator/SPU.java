@@ -2,36 +2,23 @@ package com.techelevator;
 
 public class SPU implements DeliveryDriver{
 
-	
-	private double weightLbs;
-	private double distanceMiles;
-	private boolean groundClass;
-	private boolean businessClass;
-	private boolean nextDay;
+//	public String name "SPU Ground Shipping";
+////	public String getName();
+//	return name;
+//}
 	
 	@Override
-	public Double calculateRate() {
-		if(groundClass) {
-			return((weightLbs * .0050) * distanceMiles);}
-		else if(businessClass) {
-			return((weightLbs * .05) * distanceMiles);}
-		else if(nextDay) {
-			return((weightLbs * .075) * distanceMiles);
-		}
-		return null;
+	public Double calculateRate(double distance, double weight) {
+		
+		
+		double groundRate = (weight * 5) * distance; double rate = (groundRate/ 1000);
+		return rate;
 	}
-
-	@Override
-	public double getDistance() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public double getWeight() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-	
-
-}
+		
+		
+	} 
+   
+	 
+ 
+    
+ 

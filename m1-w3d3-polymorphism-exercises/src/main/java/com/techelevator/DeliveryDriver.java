@@ -2,10 +2,11 @@ package com.techelevator;
 
 public interface DeliveryDriver {
 	
-	public Double calculateRate();
+	public Double calculateRate(double distance, double weight);
+	
+	
 	 
-	public double getDistance();
-	public double getWeight();
+
 	
 	
 	

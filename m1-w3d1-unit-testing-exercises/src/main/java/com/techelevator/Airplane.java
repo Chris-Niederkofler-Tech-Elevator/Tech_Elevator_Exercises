@@ -72,7 +72,7 @@ public class Airplane {
      */
     public int getTotalCoachSeats() {
         return totalCoachSeats;
-    }
+    } 
 
     /**
      * Reserves a first class or coach seat. Algorithm checks for reservation possiblity before making reservation. 

@@ -1,30 +1,22 @@
 package com.techelevator;
 
-public abstract class PostalService_2ndClass implements DeliveryDriver {
-	private boolean secondClass;
-	private int weightOunces;
-	private int weightLbs;
-	private int distanceMiles;
-	
-	@Override
-	public Double calculateRate() {
-		while(secondClass) {
-			if( weightOunces > 0 && weightOunces <= 2) { 
-				return(distanceMiles * .0035);}
-				else if(weightOunces > 2 && weightOunces <= 8) {
-					return(distanceMiles * .004);}
-				else if (weightOunces > 8 && weightOunces <= 15) {
-					return(distanceMiles * .0047);}
-				else if (weightLbs >= 1 && weightLbs <= 3) {
-					return(distanceMiles * .0195);}
-				else if (weightLbs > 3 && weightLbs < 9) {
-					return(distanceMiles * .045);}
-				else if (weightLbs >= 9) {
-					return(distanceMiles * .05);
-					
-			}
-			}
-		return null;
+public class PostalService_2ndClass implements DeliveryDriver {
 
-}
-}
+
+@Override
+public Double calculateRate(double distance, double weight) {
+double perMileRate = 0;
+if (weight <= 2) perMileRate = 35; 
+else if (weight <= 8) perMileRate = 40;
+else if (weight <= 15) perMileRate = 47;
+else if (weight <= 48) perMileRate = 195;
+else if (weight <= 128) perMileRate = 450;
+else perMileRate = 500;
+
+    double rate = ((perMileRate * distance) / 10000);
+    return rate;	
+	   
+ 
+}  
+}    
+    
