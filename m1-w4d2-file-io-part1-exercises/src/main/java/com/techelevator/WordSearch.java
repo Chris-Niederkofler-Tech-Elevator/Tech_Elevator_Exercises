@@ -17,6 +17,7 @@ public class WordSearch {
 			while((line = lr.readLine()) != null) {
 				
 				for(String word : line.split(" ")) {
+					
 					if(word.equalsIgnoreCase(wordName)) {
 					count++;
 					System.out.println("Word found in line " + lr.getLineNumber() +  " " + line);
