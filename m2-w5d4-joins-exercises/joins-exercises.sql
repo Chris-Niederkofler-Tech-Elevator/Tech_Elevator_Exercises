@@ -2,6 +2,7 @@
 
 -- 1. All of the films that Nick Stallone has appeared in
 -- (30 rows)
+
 SELECT title 
 FROM film
 JOIN film_actor ON film_actor.film_id = film.film_id
@@ -78,21 +79,54 @@ WHERE c.name= 'Action' AND a.first_name = 'NICK' AND a.last_name = 'STALLONE';
 
 -- 11. The address of all stores, including street address, city, district, and country
 -- (2 rows)
+select address, city, district, country from store s
+join address on address.address_id = s.address_id
+join city on city.city_id = address.city_id
+join country on country.country_id = city.country_id;
+
 
 -- 12. A list of all stores by ID, the store’s street address, and the name of the store’s manager
 -- (2 rows)
+select store.store_id, address, staff.first_name, staff.last_name
+from store
+join staff on staff.staff_id = store.manager_staff_id
+join address on address.address_id = store.address_id;
 
 -- 13. The first and last name of the top ten customers ranked by number of rentals 
 -- (#1 should be “ELEANOR HUNT” with 46 rentals, #10 should have 39 rentals)
+select c.first_name, c.last_name, count(c.customer_id) as number_of_rentals
+from customer c
+join payment p on p.customer_id = c.customer_id
+group by c.first_name, c.last_name
+order by number_of_rentals desc limit 10;
 
 -- 14. The first and last name of the top ten customers ranked by dollars spent 
 -- (#1 should be “KARL SEAL” with 221.55 spent, #10 should be “ANA BRADLEY” with 174.66 spent)
+select c.first_name, c.last_name, sum(p.amount) as total_payment
+from customer c 
+join payment p on p.customer_id = c.customer_id
+group by c.first_name, c.last_name 
+order by total_payment desc limit 10;
 
 -- 15. The store ID, street address, total number of rentals, total amount of sales (i.e. payments), and average sale of each store 
 -- (Store 1 has 7928 total rentals and Store 2 has 8121 total rentals)
+SELECT s.store_id, a.address, COUNT(p.amount), SUM(p.amount), AVG(p.amount)
+FROM store s
+JOIN address a ON a.address_id = s.address_id
+JOIN customer c ON c.store_id = s.store_id
+JOIN payment p ON p.customer_id = c.customer_id
+JOIN rental r ON r.rental_id = p.rental_id
+GROUP BY s.store_id, a.address;
+
 
 -- 16. The top ten film titles by number of rentals
 -- (#1 should be “BUCKET BROTHERHOOD” with 34 rentals and #10 should have 31 rentals)
+select f.title, count (r.*) as Top_10_Rentals
+from film f
+join inventory i on i.film_id = f.film_id
+join rental r on r.inventory_id = i.inventory_id
+group by f.title
+order by Top_10_Rentals desc limit 10;
 
 -- 17. The top five film categories by number of rentals 
 -- (#1 should be “Sports” with 1179 rentals and #5 should be “Family” with 1096 rentals)
@@ -110,9 +144,41 @@ limit 5;
 
 -- 18. The top five Action film titles by number of rentals 
 -- (#1 should have 30 rentals and #5 should have 28 rentals)
+select f.title, count(r.*) as Top_5_Action_Rentals
+from film f
+join inventory i on f.film_id = i.film_id
+join rental r on i.inventory_id = r.inventory_id
+join film_category fc on f.film_id = fc.film_id
+join category c on fc.category_id = c.category_id
+where c.name = 'Action'
+group by f.title
+order by Top_5_Action_Rentals desc
+limit 5;
+
 
 -- 19. The top 10 actors ranked by number of rentals of films starring that actor 
 -- (#1 should be “GINA DEGENERES” with 753 rentals and #10 should be “SEAN GUINESS” with 599 rentals)
+select a.first_name, a.last_name, count(r.*) as Top_Actors
+from actor a 
+join film_actor fa on fa.actor_id = a.actor_id
+join film f on f.film_id = fa.film_id
+join inventory i on i.film_id = f.film_id
+join rental r on i.inventory_id = r.inventory_id
+group by a.actor_id, a.first_name, a.last_name
+order by Top_Actors desc
+limit 10; 
 
 -- 20. The top 5 “Comedy” actors ranked by number of rentals of films in the “Comedy” category starring that actor 
 -- (#1 should have 87 rentals and #5 should have 72 rentals)
+select a.first_name, a.last_name, count(r.*) as top_comedy_actors
+from actor a 
+join film_actor fa on fa.actor_id = a.actor_id
+join film f on f.film_id = fa.film_id
+join inventory i on i.film_id = f.film_id
+join rental r on r.inventory_id = i.inventory_id
+join film_category fc on fc.film_id = f.film_id
+join category c on c.category_id = fc.category_id
+where c.name = 'Comedy'
+group by a.actor_id, a.first_name, a.last_name
+order by top_comedy_actors desc
+limit 5
