@@ -1,0 +1,25 @@
+html {
+    font: 0px Courier;
+    }
+    
+    .layer {
+    display: inline-block;
+    }
+    
+    .even {
+    background-color: skyblue;
+    }
+    
+    .odd {
+    background: red;
+    }
+    
+    .box {
+    display: inline-block;
+    font: 96px Courier;
+    color: white;
+    height: 120px;
+    width: 102px;
+    text-align: center;
+    
+    }

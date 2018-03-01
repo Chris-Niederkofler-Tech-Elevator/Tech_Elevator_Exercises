@@ -1,0 +1,13 @@
+html {
+    font: 96px Courier;
+    }
+    
+    #box_0, #box_2, #box_4, #box_6, #box_8 {
+    background: blue;
+    width: fit-content;
+    }
+    
+    #box_1, #box_3, #box_5, #box_7, #box_9 {
+    background: red;
+    width: fit-content;
+    }
