@@ -11,10 +11,25 @@
 		</style>
 	</head>
 	<body>
-		<h1>Exercise 3 - Echo</h1>
+		<h1>Exercise 3 - Echo</h1> 
+		
 		
 		<ul>
-		<%--
+	 		<c:set var = "count" value ="${param.count }"/>
+	 		<c:set var = "word" value = "${param.word }"/>
+	 	
+	 	<c:forEach  var = "number" begin="1" end="${count}" varStatus ="loop">
+		
+		 <li style="font-size: ${loop.end - number + loop.begin}px;">${word }</li>
+		
+		</c:forEach>
+		
+		</ul>
+		
+	</body>
+</html>
+
+<%--
 			Given two query string parameters, "word" and "count":
 			
 			Add a number of list items equal to "count".  Each list item should contain the value passed in "word".
@@ -24,7 +39,3 @@
 			 
 			See exercise3-echo.png for example output
 		 --%>
-		</ul>
-		
-	</body>
-</html>
