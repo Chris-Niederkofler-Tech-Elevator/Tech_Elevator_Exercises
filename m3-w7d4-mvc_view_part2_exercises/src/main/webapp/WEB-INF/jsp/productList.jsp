@@ -18,6 +18,7 @@
 				
 				<%-- display --%>
 
+
 				<div class="row">
 					<div class="left">
 						<a href="${productUrl}">
@@ -46,6 +47,11 @@
     				
     			</c:forEach>
     		</div>   
+
+       <c:forEach var="item" items="${productList}">
+       		<c:out value="${item.name}" /><br />
+       </c:forEach>
+
 
     </section>
     
